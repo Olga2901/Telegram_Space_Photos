@@ -11,6 +11,29 @@ Cкрипты для скачивания в папку directory фото из 
 - Установите зависимости из requirements.txt
 ```
 pip install -r requirements.txt
+
+-Для работы скрипта следует в папке с проектом создать файл **".env"**, в котором необходимо создать переменные:
+
+```
+NASA_TOKEN="token"
+TELEGRAM_TOKEN="token"
+TELEGRAM_CHAT_NAME="@telegramchannelname"
+TIMER_PERIOD=[sec]
+```
+
+- Для .env лучше использовать 
+
+```
+settings.py
+from dotenv import load_dotenv
+load_dotenv()
+
+settings.py
+import os
+nasa_token = os.environ["NASA_TOKEN"]
+telegram_token = os.getenv("TELEGRAM_TOKEN")
+chat_name = os.getenv("TELEGRAM_CHANNEL")
+update_period = int(os.getenv("TIMER_PERIOD", default = 13400))
 ```
 # Скачивание фото SpaceX
 
@@ -44,12 +67,12 @@ python get_nasa_days_pictures.py
 python download_epic_photo_earth.py
 ```
 
-# Отправка фото в ТГ бота
+# Отправка фото в Телеграм бота
 - Через телеграм бота @BotFather создать бота
 - Получить API-токен созданного бота
 - Создать телеграмм канал и бота сделать администратором
-- Создайте переменные окружения для бота API-токена `TELEGRAM_TOKEN`=5922771341:AAH95oxSSJV36WveqOjgTzOCUDq1mTXIIeo
-и чат-ID для канала `TELEGRAM_CHANNEL`= @spacephotosnasa
+- Создайте переменные окружения для бота API-токена `TELEGRAM_TOKEN`=AAH95oxSSJV36WveqOjgTzOCUDq1mTXIIeo
+и чат-ID для канала `TELEGRAM_CHANNEL`= @spacephotos
 - Запустить скрипт указав желаемый интервал публикации фото
 ```
 python upload_images_to_telegram.py -t время
