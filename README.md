@@ -11,8 +11,8 @@ Cкрипты для скачивания в папку directory фото из 
 - Установите зависимости из requirements.txt
 ```
 pip install -r requirements.txt
-
--Для работы скрипта следует в папке с проектом создать файл **".env"**, в котором необходимо создать переменные:
+```
+-Для работы скрипта следует в папке с проектом создать файл .env, в котором необходимо создать переменные:
 
 ```
 NASA_TOKEN="token"
@@ -24,17 +24,19 @@ TIMER_PERIOD=[sec]
 - Для .env лучше использовать 
 
 ```
-settings.py
+#settings.py
 from dotenv import load_dotenv
 load_dotenv()
-
-settings.py
+```
+```
+#settings.py
 import os
 nasa_token = os.environ["NASA_TOKEN"]
 telegram_token = os.getenv("TELEGRAM_TOKEN")
 chat_name = os.getenv("TELEGRAM_CHANNEL")
 update_period = int(os.getenv("TIMER_PERIOD", default = 13400))
 ```
+
 # Скачивание фото SpaceX
 
 - Запустите скрипт вставив ID нужного вам запуска:
@@ -51,21 +53,27 @@ python fetch_spacex_images.py
 - Получить API токен <a href="https://api.nasa.gov/#signUp%D1%8F" target="_blank">тут</a>
 - Создать переменную окружения `NASA_TOKEN` и поместить в нее полученный токен
 - Запустить скрипт, указав желаемое кол-во фото для скачивания 
+
 ```
 python get_nasa_days_pictures.py -c 50
 ```
+
 - Если кол-во не указано, то устанавливается кол-во по умолчанию равное 50
+
 ```
 python get_nasa_days_pictures.py
 ```
+
 # Скачивание фото EPIC-фото NASA
 
 - Получить API токен <a href="https://api.nasa.gov/#signUp%D1%8F" target="_blank">тут</a>
 - Создать переменную окружения `NASA_TOKEN` и поместить в нее полученный токен
 - Запустить скрипт
+
 ```
 python download_epic_photo_earth.py
 ```
+
 
 # Отправка фото в Телеграм бота
 - Через телеграм бота @BotFather создать бота
@@ -74,13 +82,16 @@ python download_epic_photo_earth.py
 - Создайте переменные окружения для бота API-токена `TELEGRAM_TOKEN`=AAH95oxSSJV36WveqOjgTzOCUDq1mTXIIeo
 и чат-ID для канала `TELEGRAM_CHANNEL`= @spacephotos
 - Запустить скрипт указав желаемый интервал публикации фото
+
 ```
 python upload_images_to_telegram.py -t время
 ```
 - Если время не указано, то устанавливается время по умолчанию равное 4 часам
+
 ```
 python upload_images_to_telegram.py
 ```
+
 # Цель проекта
 
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков dvmn.org.
