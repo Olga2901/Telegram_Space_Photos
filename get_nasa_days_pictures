@@ -1,0 +1,34 @@
+import os
+import requests
+from dotenv import load_dotenv
+from general_functions import download_image
+from general_functions import create_dirs
+from general_functions import define_ext
+
+
+
+def get_nasa_days_pictures():
+    nasa_url = "https://api.nasa.gov/planetary/apod/"
+    payload = {
+        "api_key": nasa_token,
+        "count" : 50,
+    }
+    response = requests.get(nasa_url, params = payload)
+    response.raise_for_status()
+    response = response.json()
+    for index, day_image in enumerate(response):
+        if day_image["media_type"] == "image":
+            image_url = day_image["url"]
+            ext = define_ext(image_url)
+            filename = f"{nasa_pic_dir}/nasa_apod_{index}{ext}"
+            download_image(image_url, filename)
+
+def main():
+    load_dotenv()
+    nasa_token = os.environ["NASA_TOKEN"]
+    nasa_pic_dir = "directory/daily_nasa/"
+    get_nasa_days_pictures()
+
+
+if __name__ == "__main__":
+    main()
