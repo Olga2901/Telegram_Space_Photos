@@ -2,7 +2,6 @@ from dotenv import load_dotenv
 import os
 import requests
 from datetime import datetime
-from general_functions import create_dirs
 from general_functions import download_image
 
 
