@@ -14,8 +14,8 @@ def download_epic_photo_earth():
     response = requests.get(epic_url, params = payload)
     response.raise_for_status()
     response_epic_url = response.json()
-    for number, image_nasa in enumerate(response_epic_url):
-        image = image_nasa["image"]
+    for number, nasa_image in enumerate(response_epic_url):
+        image = nasa_image["image"]
         epic_image = image.split("_")
         data_image = epic_image[2]
         data_format =  datetime.strptime(data_image, "%Y-%m-%d %H:%M:%S")
