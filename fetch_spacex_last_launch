@@ -4,9 +4,9 @@ from general_functions import download_image
 
 
 def fetch_spacex_last_launch():
-    parser = argparse.ArgumentParser(description='Описание что делает программа')
+    parser = argparse.ArgumentParser(description="Программа скачивает картинки запуска ракет SpaceX")
     parser.parse_args()
-    parser.add_argument("-l", "--launch_id", help="Start ID", default="5eb87d42ffd86e000604b384")
+    parser.add_argument("-l", "--launch_id", help="Start ID", default="5eb87d42ffd86e000604b384", help="Найти id последнего зпуска ракет SpaceX")
     namespace = parser.parse_args()
     spacex_url = f"https://api.spacexdata.com/v5/launches/{namespace.launch_id}"
     response = requests.get(spacex_url)
