@@ -1,6 +1,5 @@
 import requests
 import argparse
-from general_functions import create_dirs
 from general_functions import download_image
 
 
@@ -20,6 +19,7 @@ def fetch_spacex_last_launch():
 
 def main():
     fetch_spacex_last_launch()
+
 
 if __name__ == '__main__':
     main()
