@@ -25,7 +25,7 @@ def main():
     spacex_dir = "directory/spacex/"
     nasa_pic_dir = "directory/daily_nasa/"
     epic_dir = "directory/epics_nasa/"
-
+    create_dirs(spacex_dir, nasa_pic_dir, epic_dir)
 
 if __name__ == "__main__":
     main()
