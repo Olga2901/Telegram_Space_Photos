@@ -2,15 +2,15 @@ import os
 import requests
 from dotenv import load_dotenv
 from general_functions import download_image
-from general_functions import create_dirs
 from general_functions import define_ext
 
 
 def get_nasa_days_pictures():
     nasa_url = "https://api.nasa.gov/planetary/apod/"
+    number_of_photos = 50
     payload = {
         "api_key": nasa_token,
-        "count" : 50,
+        "count" : number_of_photos,
     }
     response = requests.get(nasa_url, params = payload)
     response.raise_for_status()
