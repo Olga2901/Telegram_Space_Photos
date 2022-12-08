@@ -22,7 +22,7 @@ def download_epic_photo_earth():
         part_image_url = "https://epic.gsfc.nasa.gov/archive/natural/"
         datetime_url = f"{part_image_url}/{data_format:%Y/%m/%d}/png/{image}.png"
         filepath = f"{epic_dir}/epic_earth_{number}.png"
-        download_image(datetime_url, filename)
+        download_image(datetime_url, filepath)
 
 
 def main():
