@@ -1,5 +1,5 @@
 # Telegram_Space_Photos
-Sends photos of space to the channel telegram from 3 sources
+Sends photos of space to the channel telegram from 3 sources.
 
 # Что делает
 Cкрипты для скачивания в папку directory фото из сервисов NASA и SpaceX и отправки фотографий в телеграмм канал через бота.
@@ -8,11 +8,11 @@ Cкрипты для скачивания в папку directory фото из 
 Для запуска требуется установленный Python версии 3.6 и выше.
 
 - Скачайте код
-- Установите зависимости из requirements.txt
+- Установите зависимости из requirements.txt.
 ```
 pip install -r requirements.txt
 ```
--Для работы скрипта следует в папке с проектом создать файл .env, в котором необходимо создать переменные:
+- Для работы скрипта следует в папке с проектом создать файл .env, в котором необходимо создать переменные:
 
 ```
 NASA_TOKEN="token"
@@ -21,7 +21,7 @@ TELEGRAM_CHAT_NAME="@telegramchannelname"
 TIMER_PERIOD=[sec]
 ```
 
-- Для .env лучше использовать 
+- Для .env лучше использовать:
 
 ```
 #settings.py
@@ -50,15 +50,15 @@ python fetch_spacex_images.py
 
 # Скачивание фото APOD-фото NASA
 
-- Получить API токен <a href="https://api.nasa.gov/#signUp%D1%8F" target="_blank">тут</a>
-- Создать переменную окружения `NASA_TOKEN` и поместить в нее полученный токен
-- Запустить скрипт, указав желаемое кол-во фото для скачивания 
+- Получить API токен <a href="https://api.nasa.gov/#signUp%D1%8F" target="_blank">тут</a>.
+- Создать переменную окружения `NASA_TOKEN` и поместить в нее полученный токен.
+- Запустить скрипт, указав желаемое кол-во фото для скачивания.
 
 ```
 python get_nasa_days_pictures.py -c 50
 ```
 
-- Если кол-во не указано, то устанавливается кол-во по умолчанию равное 50
+- Если кол-во не указано, то устанавливается кол-во по умолчанию равное 50.
 
 ```
 python get_nasa_days_pictures.py
@@ -66,9 +66,9 @@ python get_nasa_days_pictures.py
 
 # Скачивание фото EPIC-фото NASA
 
-- Получить API токен <a href="https://api.nasa.gov/#signUp%D1%8F" target="_blank">тут</a>
-- Создать переменную окружения `NASA_TOKEN` и поместить в нее полученный токен
-- Запустить скрипт
+- Получить API токен <a href="https://api.nasa.gov/#signUp%D1%8F" target="_blank">тут</a>.
+- Создать переменную окружения `NASA_TOKEN` и поместить в нее полученный токен.
+- Запустить скрипт.
 
 ```
 python download_epic_photo_earth.py
@@ -76,17 +76,17 @@ python download_epic_photo_earth.py
 
 
 # Отправка фото в Телеграм бота
-- Через телеграм бота @BotFather создать бота
-- Получить API-токен созданного бота
-- Создать телеграмм канал и бота сделать администратором
+- Через телеграм бота @BotFather создать бота.
+- Получить API-токен созданного бота.
+- Создать телеграмм канал и бота сделать администратором.
 - Создайте переменные окружения для бота API-токена `TELEGRAM_TOKEN`=AAH95oxSSJV36WveqOjgTzOCUDq1mTXIIeo
-и чат-ID для канала `TELEGRAM_CHANNEL`= @spacephotos
-- Запустить скрипт указав желаемый интервал публикации фото
+и чат-ID для канала `TELEGRAM_CHANNEL`= @spacephotos.
+- Запустить скрипт указав желаемый интервал публикации фото.
 
 ```
 python upload_images_to_telegram.py -t время
 ```
-- Если время не указано, то устанавливается время по умолчанию равное 4 часам
+- Если время не указано, то устанавливается время по умолчанию равное 4 часам.
 
 ```
 python upload_images_to_telegram.py
