@@ -16,11 +16,9 @@ def get_nasa_days_pictures():
     response.raise_for_status()
     response_nasa_url = response.json()
     for index, day_image in enumerate(response_nasa_url):
-        if day_image["media_type"] == "image":
-            image_url = day_image["url"]
-            ext = define_ext(image_url)
-            filepath = f"{nasa_pic_dir}/nasa_apod_{index}{ext}"
-            download_image(image_url, filepath)
+        ext = define_ext(day_image["url"])
+        filepath = f"{nasa_pic_dir}/nasa_apod_{index}{ext}"
+        download_image(day_image["url"], filepath)
 
 
 def main():
