@@ -8,10 +8,10 @@ def create_dirs(*args):
         os.makedirs(directory, exist_ok=True)
 
 
-def download_image(url, filename):
+def download_image(url, filepath):
     response = requests.get(url)
     response.raise_for_status()
-    with open(filename, 'wb') as file:
+    with open(filepath, 'wb') as file:
         file.write(response.content)
 
 
@@ -27,6 +27,6 @@ def main():
     epic_dir = "directory/epics_nasa/"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 
