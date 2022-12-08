@@ -19,8 +19,8 @@ def get_nasa_days_pictures():
         if day_image["media_type"] == "image":
             image_url = day_image["url"]
             ext = define_ext(image_url)
-            filename = f"{nasa_pic_dir}/nasa_apod_{index}{ext}"
-            download_image(image_url, filename)
+            filepath = f"{nasa_pic_dir}/nasa_apod_{index}{ext}"
+            download_image(image_url, filepath)
 
 
 def main():
