@@ -25,7 +25,7 @@ def main():
     number_of_photos = 50
     nasa_token = os.environ["NASA_TOKEN"]
     nasa_pic_dir = "directory/daily_nasa/"
-    get_nasa_days_pictures(nasa_token)
+    get_nasa_days_pictures(nasa_token, number_of_photos)
 
 
 if __name__ == "__main__":
