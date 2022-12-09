@@ -5,9 +5,8 @@ from general_functions import download_image
 from general_functions import define_ext
 
 
-def get_nasa_days_pictures():
+def get_nasa_days_pictures(nasa_token, number_of_photos):
     nasa_url = "https://api.nasa.gov/planetary/apod/"
-    number_of_photos = 50
     payload = {
         "api_key": nasa_token,
         "count" : number_of_photos,
@@ -23,9 +22,10 @@ def get_nasa_days_pictures():
 
 def main():
     load_dotenv()
+    number_of_photos = 50
     nasa_token = os.environ["NASA_TOKEN"]
     nasa_pic_dir = "directory/daily_nasa/"
-    get_nasa_days_pictures()
+    get_nasa_days_pictures(nasa_token)
 
 
 if __name__ == "__main__":
