@@ -5,7 +5,7 @@ from datetime import datetime
 from general_functions import download_image
 
 
-def download_epic_photo_earth():
+def download_epic_photo_earth(nasa_token):
     payload = {
         "api_key": nasa_token,
     }
@@ -28,7 +28,7 @@ def main():
     load_dotenv()
     nasa_token = os.environ["NASA_TOKEN"]
     epic_dir = "directory/epics_nasa/"
-    download_epic_photo_earth()
+    download_epic_photo_earth(nasa_token)
 
 
 if __name__ == "__main__":
